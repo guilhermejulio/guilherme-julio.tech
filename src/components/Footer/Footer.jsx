@@ -1,15 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
-import PortfolioContext from '../../context/context';
-import GithubButtons from '../GithubButtons/GithubButtons';
-
-import { githubButtons } from '../../mock/data';
 
 const Footer = () => {
-  const { footer } = useContext(PortfolioContext);
+  const { footer } = {};
   const { networks } = footer;
-  const { isEnabled } = githubButtons;
 
   return (
     <footer className="footer navbar-static-bottom">
@@ -26,7 +21,7 @@ const Footer = () => {
               return (
                 <a
                   key={id}
-                  href={url || 'https://github.com/cobidev/gatsby-simplefolio'}
+                  href={url || '#!'}
                   rel="noopener noreferrer"
                   target="_blank"
                   aria-label={name}
@@ -37,14 +32,7 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p className="footer__text">
-          © {new Date().getFullYear()} - Template developed by{' '}
-          <a href="https://github.com/cobidev" target="_blank" rel="noopener noreferrer">
-            Jacobo Martínez
-          </a>
-        </p>
-
-        {isEnabled && <GithubButtons />}
+        <p className="footer__text">© {new Date().getFullYear()} | Feito com💙</p>
       </Container>
     </footer>
   );
