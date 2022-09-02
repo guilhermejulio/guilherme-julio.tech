@@ -1,16 +1,32 @@
 - id: 1
-  title: Titulo
-  info: Info
-  infoTwo: Info2
-  url: URL
-  repo: https://github.com/guilhermejulio
-  repoBtn: Github
-  img: project.jpg
+  title: Swampum
+  info: Swampum é uma comunidade online unica, onde você pode vender, comprar, emprestar pegar emprestado ou até mesmo pegar ou dar itens de graça com pessoas da sua cidade, vizinhos amigos e quem você quiser.
+  infoTwo: Atuei no projeto como desenvolvedor fullstack e tech lead, utilizando as tecnologias VueJS, NodeJS, MySQL, Cypress, o versionamento de código utilizado foi Git com Bitbucket.
+  url: https://swampum.com
+  repo: ''
+  repoBtn: ''
+  img: swampum.png
 - id: 2
-  title: Titulo
-  info: Info
-  infoTwo: Info2
-  url: URL
-  repo: https://github.com/guilhermejulio
-  repoBtn: Github
-  img: project.jpg
+  title: Zing Innovation
+  info: Projeto com foco em ser um hub de inovação tecnologica com objetivo de conexão de empresas e institutos, com solucionadores e startups incluindo a gestão de programas e desafios e soluções de problemas reais.
+  infoTwo: Atuei no projeto como Arquiteto, bem como no desenvolvimento de funcionalidades do back-end quando requisitado. As tecnologias utilizadas foram React com TypeScript, C# .NET, tecnologias em nuvem da Amazon Web Services (AWS), banco de dados PostgreSQL, o versionamento de código utilizado foi Git com BitBucket.
+  url: https://zing.iebtinnovation.com/
+  repo: ''
+  repoBtn: ''
+  img: zing.png
+- id: 3
+  title: Transforma+
+  info: Projeto ligado a Agência Brasileira de Desenvolvimento Industrial, que tem foco na capacitação em transformação digital para micro e pequenas empresas.
+  infoTwo: Atuei no projeto no desenvolvimento do back-end utilizando Python com Django, banco de dados PostgreSQL, o versionamento de código utilizado foi Git com Bitbucket.
+  url: https://www.transformamais.com.br/
+  repo: ''
+  repoBtn: ''
+  img: transformamais.png
+- id: 4
+  title: Ligo
+  info: Projeto que tem o objetivo de fornecer uma solução de colaboração digital de informações entre a indústria e o varejo farmacêutico. Trata-se de uma aplicação multiplataforma (Web e Aplicação móvel - Android e iOS).
+  infoTwo: Trabalhei no desenvolvimento back-end da aplicação e na manutenção das bases de dados as tecnologias utilizadas foram Python com Django REST Framework base de dados PostgreSQL. Aplicação em nuvem utilizando tecnologias da Amazon Web Services (AWS) com docker. Versionamento de código utilizando Git com BitBucket.
+  url: https://ligohub.com/
+  repo: ''
+  repoBtn: ''
+  img: ligo.png
