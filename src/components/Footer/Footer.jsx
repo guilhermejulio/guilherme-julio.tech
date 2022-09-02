@@ -4,7 +4,7 @@ import { Link } from 'react-scroll';
 
 const Footer = () => {
   const { footer } = {};
-  const { networks } = footer;
+  const { networks } = {};
 
   return (
     <footer className="footer navbar-static-bottom">
