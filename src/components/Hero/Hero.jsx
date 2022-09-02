@@ -2,10 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Header = () => {
-  const { hero } = {};
-  // const { title, name, subtitle, cta } = hero;
+  const data = useStaticQuery(graphql`
+    query {
+      hero: pessoaYaml {
+        title
+        name
+        subtitle
+        cta
+      }
+    }
+  `);
+  const { hero } = data;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);

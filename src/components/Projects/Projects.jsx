@@ -13,6 +13,11 @@ const Projects = () => {
         nodes {
           title
           info
+          infoTwo
+          url
+          repo
+          repoBtn
+          img
         }
       }
     }
@@ -37,7 +42,7 @@ const Projects = () => {
     <section id="projects">
       <Container>
         <div className="project-wrapper">
-          <Title title="Projects" />
+          <Title title="Projetos" />
           {projects.map((project) => {
             return (
               <Row key={project.id}>
@@ -50,10 +55,10 @@ const Projects = () => {
                     distance="30px"
                   >
                     <div className="project-wrapper__text">
-                      <h3 className="project-wrapper__text-title">Aqui será o titulo</h3>
+                      <h3 className="project-wrapper__text-title">{project?.title}</h3>
                       <div>
-                        <p>Aqui será a informação do projeto</p>
-                        <p className="mb-4">Aqui será a segunda informação do projeto</p>
+                        <p>{project?.info}</p>
+                        <p className="mb-4">{project?.infoTwo}</p>
                       </div>
                       <a
                         target="_blank"
@@ -71,7 +76,7 @@ const Projects = () => {
                           className="cta-btn text-color-main"
                           href={project.repo}
                         >
-                          Source Code
+                          {project?.repoBtn}
                         </a>
                       )}
                     </div>

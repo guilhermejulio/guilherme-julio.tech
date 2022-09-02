@@ -1,16 +1,26 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Container } from 'react-bootstrap';
+import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title/Title';
 
 const Contact = () => {
-  const { contact } = {};
-  // const { cta, btn, email } = contact;
+  const data = useStaticQuery(graphql`
+    query {
+      contact: contatoYaml {
+        cta
+        btn
+        email
+        title
+      }
+    }
+  `);
+  const { contact } = data;
 
   return (
     <section id="contact">
       <Container>
-        <Title title="Contact" />
+        <Title title={contact?.title} />
         <Fade bottom duration={1000} delay={800} distance="30px">
           <div className="contact-wrapper">
             <p className="contact-wrapper__text">
@@ -21,9 +31,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="cta-btn cta-btn--resume"
               href={
-                contact?.email
-                  ? `mailto:${contact.email}`
-                  : 'https://github.com/cobidev/react-simplefolio'
+                contact?.email ? `mailto:${contact.email}` : 'https://github.com/guilhermejulio'
               }
             >
               {contact?.btn || "Let's Talk"}

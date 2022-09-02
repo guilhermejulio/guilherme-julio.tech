@@ -5,10 +5,11 @@ import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { headData } from '../data/data';
+import Global from '../constants/Global';
 import '../style/main.scss';
 
 export default () => {
+  const headData = Global.getHeadData;
   const { lang } = headData;
 
   return (

@@ -1,2 +1,9 @@
-- title: XYZ
-  info: abc
+- id: 1
+  name: github
+  url: https://www.github.com/guilhermejulio
+- id: 2
+  name: linkedin
+  url: https://www.linkedin.com/in/guilhermejulio
+- id: 3
+  name: instagram
+  url: https://www.instagram.com/gui.zip

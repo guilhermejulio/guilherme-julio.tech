@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
+import { graphql, useStaticQuery } from 'gatsby';
 import Title from '../Title/Title';
-// import AboutImg from '../Image/AboutImg';
+import AboutImg from '../Image/AboutImg';
 
 const About = () => {
-  const { about } = {};
-  // const { img, paragraphOne, paragraphTwo, paragraphThree, resume } = about;
+  const data = useStaticQuery(graphql`
+    query {
+      pessoa: sobreYaml {
+        img
+        paragraphOne
+        paragraphTwo
+        paragraphThree
+        resume
+        titleText
+        btnText
+      }
+    }
+  `);
+  const about = data.pessoa;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -24,12 +37,12 @@ const About = () => {
   return (
     <section id="about">
       <Container>
-        <Title title="About Me" />
+        <Title title={about?.titleText} />
         <Row className="about-wrapper">
           <Col md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
               <div className="about-wrapper__image">
-                {/* <AboutImg alt="profile picture" filename={img} /> */}
+                <AboutImg alt="profile picture" filename={about?.img} />
               </div>
             </Fade>
           </Col>
@@ -54,9 +67,9 @@ const About = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="cta-btn cta-btn--resume"
-                      href="#!"
+                      href={about?.resume}
                     >
-                      Resume
+                      {about?.btnText || 'Resume'}
                     </a>
                   </span>
                 )}

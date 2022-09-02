@@ -1,10 +1,21 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Footer = () => {
-  const { footer } = {};
-  const { networks } = {};
+  const data = useStaticQuery(graphql`
+    query {
+      networks: allSocialYaml {
+        nodes {
+          id
+          name
+          url
+        }
+      }
+    }
+  `);
+  const networks = data.networks.nodes;
 
   return (
     <footer className="footer navbar-static-bottom">
@@ -32,7 +43,7 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p className="footer__text">© {new Date().getFullYear()} | Feito com💙</p>
+        <p className="footer__text">© {new Date().getFullYear()} | Feito com 💙</p>
       </Container>
     </footer>
   );
