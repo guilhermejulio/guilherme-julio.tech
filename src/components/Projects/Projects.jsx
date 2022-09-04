@@ -3,11 +3,14 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 import Tilt from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Trans } from 'gatsby-plugin-react-i18next';
+import { Trans, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import Title from '../Title/Title';
 import ProjectImg from '../Image/ProjectImg';
 
 const Projects = () => {
+  const { t } = useTranslation();
+  const { language } = useI18next();
+
   const data = useStaticQuery(graphql`
     query {
       projetos: allProjetosYaml {
@@ -22,10 +25,37 @@ const Projects = () => {
           img
         }
       }
+      projects: allProjectsYaml {
+        nodes {
+          id
+          title
+          info
+          infoTwo
+          url
+          repo
+          repoBtn
+          img
+        }
+      }
+      proyectos: allProyectosYaml {
+        nodes {
+          id
+          title
+          info
+          infoTwo
+          url
+          repo
+          repoBtn
+          img
+        }
+      }
     }
   `);
 
-  const projects = data.projetos.nodes;
+  let getProjects = data.projetos.nodes;
+  if (language === 'en') getProjects = data.projects.nodes;
+  else if (language === 'es') getProjects = data.proyectos.nodes;
+  const projects = getProjects;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -44,7 +74,7 @@ const Projects = () => {
     <section id="projects">
       <Container>
         <div className="project-wrapper">
-          <Title title="Projetos" />
+          <Title title={t('Projetos que trabalhei')} />
           {projects.map((project) => {
             return (
               <Row key={project.id}>

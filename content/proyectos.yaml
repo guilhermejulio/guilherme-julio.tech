@@ -1,0 +1,32 @@
+- id: 1
+  title: Swampum
+  info: Swampum es una comunidad en línea única donde puedes vender, comprar, pedir prestado, prestar o regalar artículos con personas de tu ciudad, vecinos, amigos y quien quieras.
+  infoTwo: Trabajé en el proyecto como desarrollador de pila completa y líder tecnológico, utilizando las tecnologías VueJS, NodeJS, MySQL, Cypress, el código de versiones utilizado fue Git con Bitbucket.
+  url: https://swampum.com
+  repo: ''
+  repoBtn: ''
+  img: swampum.png
+- id: 2
+  title: Zing Innovation
+  info: Proyecto enfocado a ser un hub de innovación tecnológica con el objetivo de conectar empresas e institutos, con solucionadores y startups, incluyendo la gestión de programas y retos y soluciones a problemas reales.
+  infoTwo: Trabajé en el proyecto como Arquitecto, así como en el desarrollo de funcionalidades de back-end cuando se requería. Las tecnologías utilizadas fueron React con TypeScript, C# .NET, tecnologías en la nube de Amazon Web Services (AWS), base de datos PostgreSQL, el versionado de código utilizado fue Git con BitBucket.
+  url: https://zing.iebtinnovation.com/
+  repo: ''
+  repoBtn: ''
+  img: zing.png
+- id: 3
+  title: Transforma+
+  info: Proyecto vinculado a la Agencia Brasileña de Desarrollo Industrial, que se enfoca en la formación en transformación digital para micro y pequeñas empresas.
+  infoTwo: Trabajé en el proyecto en el desarrollo del back-end utilizando Python con Django, base de datos PostgreSQL, el versionado de código utilizado fue Git con Bitbucket.
+  url: https://www.transformamais.com.br/
+  repo: ''
+  repoBtn: ''
+  img: transformamais.png
+- id: 4
+  title: Ligo
+  info: Proyecto que tiene como objetivo brindar una solución para la colaboración digital de información entre la industria farmacéutica y el retail. Es una aplicación multiplataforma (Web y Aplicación Móvil - Android e iOS).
+  infoTwo: Trabajé en el desarrollo back-end de la aplicación y en el mantenimiento de las bases de datos. Las tecnologías utilizadas fueron Python con Django REST Framework, base de datos PostgreSQL. Aplicación en la nube utilizando tecnologías Amazon Web Services (AWS) con Docker. Control de versiones de código usando Git con BitBucket.
+  url: https://ligohub.com/
+  repo: ''
+  repoBtn: ''
+  img: ligo.png

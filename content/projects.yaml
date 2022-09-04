@@ -1,0 +1,32 @@
+- id: 1
+  title: Swampum
+  info: Swampum is a unique online community where you can sell, buy, borrow, lend or give away items with people in your town, neighbors, friends and whoever you want.
+  infoTwo: I worked on the project as a fullstack developer and tech lead, using the technologies VueJS, NodeJS, MySQL, Cypress, the code versioning used was Git with Bitbucket.
+  url: https://swampum.com
+  repo: ''
+  repoBtn: ''
+  img: swampum.png
+- id: 2
+  title: Zing Innovation
+  info: Project focused on being a technological innovation hub with the objective of connecting companies and institutes, with solvers and startups, including the management of programs and challenges and solutions to real problems.
+  infoTwo: I worked on the project as an Architect, as well as on the development of back-end functionalities when required. The technologies used were React with TypeScript, C# .NET, cloud technologies from Amazon Web Services (AWS), PostgreSQL database, the code versioning used was Git with BitBucket.
+  url: https://zing.iebtinnovation.com/
+  repo: ''
+  repoBtn: ''
+  img: zing.png
+- id: 3
+  title: Transforma+
+  info: Project linked to the Brazilian Agency for Industrial Development, which focuses on training in digital transformation for micro and small companies.
+  infoTwo: I worked on the project in the development of the back-end using Python with Django, PostgreSQL database, the code versioning used was Git with Bitbucket.
+  url: https://www.transformamais.com.br/
+  repo: ''
+  repoBtn: ''
+  img: transformamais.png
+- id: 4
+  title: Ligo
+  info: Project that aims to provide a solution for digital collaboration of information between the pharmaceutical industry and retail. It is a multiplatform application (Web and Mobile Application - Android and iOS).
+  infoTwo: I worked on the back-end development of the application and on the maintenance of the databases. The technologies used were Python with Django REST Framework, PostgreSQL database. Cloud application using Amazon Web Services (AWS) technologies with Docker. Code versioning using Git with BitBucket.
+  url: https://ligohub.com/
+  repo: ''
+  repoBtn: ''
+  img: ligo.png
