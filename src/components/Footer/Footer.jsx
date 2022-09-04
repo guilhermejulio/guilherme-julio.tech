@@ -43,7 +43,10 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p className="footer__text">© {new Date().getFullYear()} | Feito com 💙</p>
+        <p className="footer__text">
+          © {new Date().getFullYear()} | Feito com 💜 por{' '}
+          <a href="https://www.github.com/guilhermejulio">Guilherme Julio</a>
+        </p>
       </Container>
     </footer>
   );
