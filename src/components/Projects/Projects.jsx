@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Fade from 'react-reveal/Fade';
 import Tilt from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Trans } from 'gatsby-plugin-react-i18next';
 import Title from '../Title/Title';
 import ProjectImg from '../Image/ProjectImg';
 
@@ -11,6 +12,7 @@ const Projects = () => {
     query {
       projetos: allProjetosYaml {
         nodes {
+          id
           title
           info
           infoTwo
@@ -66,7 +68,7 @@ const Projects = () => {
                         className="cta-btn cta-btn--hero"
                         href={project.url || '#!'}
                       >
-                        Veja ao vivo
+                        <Trans>Veja ao vivo</Trans>
                       </a>
 
                       {project.repo && (

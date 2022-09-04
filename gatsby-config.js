@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        languages: [`en`, `pt`],
+        languages: [`en`, `pt`, `es`],
         defaultLanguage: `pt`,
         siteUrl: `http://localhost:8000/`,
         i18nextOptions: {
@@ -62,13 +62,8 @@ module.exports = {
         },
         pages: [
           {
-            matchPath: '/:lang?/blog/:uid',
+            matchPath: '/:lang?/404/',
             getLanguageFromPath: true,
-            excludeLanguages: ['es'],
-          },
-          {
-            matchPath: '/preview',
-            languages: ['en'],
           },
         ],
       },

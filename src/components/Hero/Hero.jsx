@@ -3,8 +3,10 @@ import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 
 const Header = () => {
+  const { language } = useI18next();
   const data = useStaticQuery(graphql`
     query {
       hero: pessoaYaml {
@@ -13,9 +15,25 @@ const Header = () => {
         subtitle
         cta
       }
+      heroEN: personYaml {
+        title
+        name
+        subtitle
+        cta
+      }
+      heroES: personaYaml {
+        title
+        name
+        subtitle
+        cta
+      }
     }
   `);
-  const { hero } = data;
+  let getHero = data.hero;
+  if (language === 'en') getHero = data.heroEN;
+  else if (language === 'es') getHero = data.heroES;
+  
+  const hero = getHero;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -35,17 +53,17 @@ const Header = () => {
       <Container>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
           <h1 className="hero-title">
-            {hero?.title || 'Hi, my name is'}{' '}
-            <span className="text-color-main">{hero?.name || 'Your Name'}</span>
+            {hero?.title}{' '}
+            <span className="text-color-main">{hero?.name}</span>
             <br />
-            {hero?.subtitle || "I'm the Unknown Developer."}
+            {hero?.subtitle}
           </h1>
         </Fade>
         <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
           <p className="hero-cta">
             <span className="cta-btn cta-btn--hero">
               <Link to="about" smooth duration={1000}>
-                {hero?.cta || 'Know more'}
+                {hero?.cta}
               </Link>
             </span>
           </p>

@@ -4,10 +4,12 @@ import About from './About/About';
 import Projects from './Projects/Projects';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
+import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher';
 
 function App() {
   return (
     <>
+      <LanguageSwitcher />
       <Hero />
       <About />
       <Projects />

@@ -7,13 +7,14 @@ module.exports = {
   },
   rules: {
     'import/no-extraneous-dependencies': 'off',
-    'prettier/prettier': 'error',
+    'prettier/prettier': ['off', { singleQuote: true }],
     'no-console': 'warn',
     'react/jsx-one-expression-per-line': 'off',
-    'react/jsx-filename-extension': 'off', // disable if necessary
-    'react/static-property-placement': 'off', // disable if necessary
-    'react/jsx-props-no-spreading': 'off', // disable if necessary
+    'react/jsx-filename-extension': 'off',
+    'react/static-property-placement': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
+    "react/prop-types": "off"
   },
   parser: 'babel-eslint',
 };

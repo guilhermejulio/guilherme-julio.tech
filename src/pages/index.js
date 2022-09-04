@@ -1,24 +1,31 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import App from '../components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/main.scss';
 import Global from '../constants/Global';
 
-// eslint-disable-next-line react/prop-types
-export default ({ data }) => {
-  console.log(data);
-  const headData = Global.getHeadData;
+export default () => {
+  const { language } = useI18next();
+  let getHeadByLanguage = Global.getHeadData;
+  if (language === 'en') {
+    getHeadByLanguage = Global.getHeadDataEN;
+  } else if (language === 'es') {
+    getHeadByLanguage = Global.getHeadDataES;
+  }
+  const headData = getHeadByLanguage;
+
   const { title, lang, description } = headData;
 
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{title || 'Gatsby Simplefolio'}</title>
-        <html lang={lang || 'en'} />
-        <meta name="description" content={description || 'Gatsby Simplefolio'} />
+        <title>{title}</title>
+        <html lang={lang} />
+        <meta name="description" content={description} />
       </Helmet>
       <App />
     </>
@@ -30,6 +37,7 @@ export const query = graphql`
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
+          id
           ns
           data
           language

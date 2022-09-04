@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
+import { useI18next } from 'gatsby-plugin-react-i18next';
 import Fade from 'react-reveal/Fade';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,9 +10,15 @@ import Global from '../constants/Global';
 import '../style/main.scss';
 
 export default () => {
-  const headData = Global.getHeadData;
+  const { language } = useI18next();
+  let getHeadByLanguage = Global.getHeadData;
+  if (language === 'en') {
+    getHeadByLanguage = Global.getHeadDataEN;
+  } else if (language === 'es') {
+    getHeadByLanguage = Global.getHeadDataES;
+  }
+  const headData = getHeadByLanguage;
   const { lang } = headData;
-
   return (
     <>
       <Helmet>
@@ -42,3 +49,18 @@ export default () => {
     </>
   );
 };
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          id
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
