@@ -2,8 +2,10 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const data = useStaticQuery(graphql`
     query {
       networks: allSocialYaml {
@@ -44,7 +46,7 @@ const Footer = () => {
         </div>
         <hr />
         <p className="footer__text">
-          © {new Date().getFullYear()} | Feito com 💜 por{' '}
+          © {new Date().getFullYear()} | {t('Feito com')} 💜 {t('por')}{' '}
           <a href="https://www.github.com/guilhermejulio">Guilherme Julio</a>
         </p>
       </Container>
