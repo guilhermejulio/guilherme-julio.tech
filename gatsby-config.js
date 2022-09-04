@@ -51,7 +51,7 @@ module.exports = {
       options: {
         localeJsonSourceName: `locale`,
         languages: [`en`, `pt`, `es`],
-        defaultLanguage: `pt`,
+        defaultLanguage: `en`,
         siteUrl: `http://localhost:8000/`,
         i18nextOptions: {
           interpolation: {

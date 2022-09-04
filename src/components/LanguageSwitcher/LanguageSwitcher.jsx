@@ -44,7 +44,7 @@ const LanguageSwitcher = () => {
     <ToggleGroup type="single" defaultValue={language} aria-label="Text alignment">
       <ToggleGroupItem value="pt" aria-label="Left aligned">
         <Link
-          to="/"
+          to="/pt"
           style={{
             textDecoration: `none`,
           }}
