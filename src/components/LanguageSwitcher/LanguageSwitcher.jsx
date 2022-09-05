@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { styled } from '@stitches/react';
-import { useI18next } from 'gatsby-plugin-react-i18next';
+import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import '../../../node_modules/flag-icons/css/flag-icons.min.css';
 
@@ -40,33 +38,41 @@ export const ToggleGroup = StyledToggleGroup;
 export const ToggleGroupItem = StyledItem;
 
 const LanguageSwitcher = () => {
-  const { language } = useI18next();
+  const { originalPath, language } = useI18next();
 
   return (
     <ToggleGroup type="single" defaultValue={language} aria-label="Text alignment">
       <ToggleGroupItem value="pt" aria-label="Left aligned">
-        <span
-          className="fi fi-br"
-          onClick={() => {
-            window.location.href = '/';
+        <Link
+          to="/"
+          style={{
+            textDecoration: `none`,
           }}
-        />
+        >
+          <span className="fi fi-br" />
+        </Link>
       </ToggleGroupItem>
       <ToggleGroupItem value="en" aria-label="Center aligned">
-        <span
-          className="fi fi-gb"
-          onClick={() => {
-            window.location.href = '/en';
+        <Link
+          to={originalPath}
+          language="en"
+          style={{
+            textDecoration: `none`,
           }}
-        />
+        >
+          <span className="fi fi-gb" />
+        </Link>
       </ToggleGroupItem>
       <ToggleGroupItem value="es" aria-label="Right aligned">
-        <span
-          className="fi fi-es"
-          onClick={() => {
-            window.location.href = '/es';
+        <Link
+          to={originalPath}
+          language="es"
+          style={{
+            textDecoration: `none`,
           }}
-        />
+        >
+          <span className="fi fi-es" />
+        </Link>
       </ToggleGroupItem>
     </ToggleGroup>
   );
