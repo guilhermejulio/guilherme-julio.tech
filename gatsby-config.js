@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Gatsby_Localization',
+  },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -17,9 +20,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
-        languages: [`pt-br`, `en`, `es`],
-        defaultLanguage: 'pt-br',
-        siteUrl: process.env.SiteURL || `http://localhost:8000/`,
+        languages: [`en`, `es`, `pt-br`],
+        defaultLanguage: `pt-br`,
+        siteUrl: `http://localhost:8000/`,
         i18nextOptions: {
           interpolation: {
             escapeValue: false,
@@ -29,8 +32,13 @@ module.exports = {
         },
         pages: [
           {
-            matchPath: '/:lang?/404/',
+            matchPath: '/:lang?/blog/:uid',
             getLanguageFromPath: true,
+            excludeLanguages: ['es'],
+          },
+          {
+            matchPath: '/preview',
+            languages: ['en'],
           },
         ],
       },

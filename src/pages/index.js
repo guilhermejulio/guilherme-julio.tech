@@ -33,11 +33,10 @@ export default () => {
 };
 
 export const query = graphql`
-  query ($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
       edges {
         node {
-          id
           ns
           data
           language

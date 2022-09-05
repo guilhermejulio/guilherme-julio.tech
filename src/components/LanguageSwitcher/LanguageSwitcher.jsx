@@ -38,7 +38,8 @@ export const ToggleGroup = StyledToggleGroup;
 export const ToggleGroupItem = StyledItem;
 
 const LanguageSwitcher = () => {
-  const { originalPath, language } = useI18next();
+  const {languages, originalPath, language} = useI18next();
+  console.log(languages);
 
   return (
     <ToggleGroup type="single" defaultValue={language} aria-label="Text alignment">
@@ -55,7 +56,7 @@ const LanguageSwitcher = () => {
       <ToggleGroupItem value="en" aria-label="Center aligned">
         <Link
           to={originalPath}
-          language="en"
+          language={languages[1]}
           style={{
             textDecoration: `none`,
           }}
@@ -66,7 +67,7 @@ const LanguageSwitcher = () => {
       <ToggleGroupItem value="es" aria-label="Right aligned">
         <Link
           to={originalPath}
-          language="es"
+          language={languages[2]}
           style={{
             textDecoration: `none`,
           }}
