@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Global from '../constants/Global';
 import '../style/main.scss';
 
-export default () => {
+const NotFoundPage = () => {
   const { t } = useTranslation();
   const { language } = useI18next();
   let getHeadByLanguage = Global.getHeadData;
@@ -52,8 +52,8 @@ export default () => {
 };
 
 export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
           ns
@@ -64,3 +64,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default NotFoundPage;

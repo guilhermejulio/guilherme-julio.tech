@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/main.scss';
 import Global from '../constants/Global';
 
-export default () => {
+const IndexPage = () => {
   const { language } = useI18next();
   let getHeadByLanguage = Global.getHeadData;
   if (language === 'en') {
@@ -45,3 +45,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default IndexPage;

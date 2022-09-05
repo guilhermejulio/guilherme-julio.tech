@@ -43,9 +43,10 @@ const LanguageSwitcher = () => {
 
   return (
     <ToggleGroup type="single" defaultValue={language} aria-label="Text alignment">
-      <ToggleGroupItem value="pt" aria-label="Left aligned">
+      <ToggleGroupItem value="pt-br" aria-label="Left aligned">
         <Link
           to="/"
+          language="pt-br"
           style={{
             textDecoration: `none`,
           }}
@@ -56,7 +57,7 @@ const LanguageSwitcher = () => {
       <ToggleGroupItem value="en" aria-label="Center aligned">
         <Link
           to={originalPath}
-          language={languages[1]}
+          language="en"
           style={{
             textDecoration: `none`,
           }}
@@ -67,7 +68,7 @@ const LanguageSwitcher = () => {
       <ToggleGroupItem value="es" aria-label="Right aligned">
         <Link
           to={originalPath}
-          language={languages[2]}
+          language="es"
           style={{
             textDecoration: `none`,
           }}
