@@ -38,44 +38,42 @@ export const ToggleGroup = StyledToggleGroup;
 export const ToggleGroupItem = StyledItem;
 
 const LanguageSwitcher = () => {
-  const {languages, originalPath, language} = useI18next();
-  console.log(languages);
-
+  const { originalPath, language } = useI18next();
   return (
     <ToggleGroup type="single" defaultValue={language} aria-label="Text alignment">
-      <ToggleGroupItem value="pt-br" aria-label="Left aligned">
-        <Link
-          to="/"
-          language="pt-br"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
+      <Link
+        to="/"
+        language="pt-br"
+        style={{
+          textDecoration: `none`,
+        }}
+      >
+        <ToggleGroupItem value="pt-br" aria-label="Left aligned">
           <span className="fi fi-br" />
-        </Link>
-      </ToggleGroupItem>
-      <ToggleGroupItem value="en" aria-label="Center aligned">
-        <Link
-          to={originalPath}
-          language="en"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
+        </ToggleGroupItem>
+      </Link>
+      <Link
+        to={originalPath}
+        language="en"
+        style={{
+          textDecoration: `none`,
+        }}
+      >
+        <ToggleGroupItem value="en" aria-label="Center aligned">
           <span className="fi fi-gb" />
-        </Link>
-      </ToggleGroupItem>
-      <ToggleGroupItem value="es" aria-label="Right aligned">
-        <Link
-          to={originalPath}
-          language="es"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
+        </ToggleGroupItem>
+      </Link>
+      <Link
+        to={originalPath}
+        language="es"
+        style={{
+          textDecoration: `none`,
+        }}
+      >
+        <ToggleGroupItem value="es" aria-label="Right aligned">
           <span className="fi fi-es" />
-        </Link>
-      </ToggleGroupItem>
+        </ToggleGroupItem>
+      </Link>
     </ToggleGroup>
   );
 };
