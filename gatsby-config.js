@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
@@ -14,6 +15,12 @@ module.exports = {
       options: {
         path: `${__dirname}/locales`,
         name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedExtensions: false,
       },
     },
     {
@@ -81,6 +88,6 @@ module.exports = {
       options: {
         path: `${__dirname}/gatsby-config.js`,
       },
-    }
+    },
   ],
 };
